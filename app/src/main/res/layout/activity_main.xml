@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main" android:layout_width="match_parent"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
@@ -10,12 +11,53 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        android:title="Lista de Libros" android:titleTextColor="@android:color/white"
+        android:title="Lista de Libros"
+        android:titleTextColor="@android:color/white"
         app:titleCentered="true" />
 
+    <!-- TextView para mostrar el estado del WiFi -->
+    <TextView
+        android:id="@+id/wifiStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verificando WiFi..."
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="12dp"
+        android:background="#E3F2FD"
+        android:layout_margin="8dp" />
+
+    <!-- Botón para seleccionar imagen -->
+    <Button
+        android:id="@+id/btnSeleccionarImagen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Seleccionar Imagen"
+        android:textSize="16sp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp" />
+
+    <!-- ImageView para mostrar la imagen seleccionada -->
+    <ImageView
+        android:id="@+id/imagenSeleccionada"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:scaleType="centerCrop"
+        android:background="#F5F5F5"
+        android:visibility="gone"
+        android:contentDescription="Imagen seleccionada" />
+
+    <!-- RecyclerView para la lista de libros -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewLibros" android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/recyclerViewLibros"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:padding="8dp" />
 
 </LinearLayout>
